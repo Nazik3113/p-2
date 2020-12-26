@@ -163,11 +163,11 @@ li {
   position: absolute;
   top: 0;
   width: 300px;
-  height: 100vh;
+  height: 100%;
   background-color: #252525;
   z-index: 10;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   transform: translateX(-100%);
   transition: all 0.5s ease;
@@ -179,6 +179,11 @@ li {
 
   .mobile-menu__wrapper {
     text-align: center;
+  }
+
+  .mobile-menu__wrapper {
+    margin-top: 50vh;
+    transform: translateY(-50%);
   }
 
   .mobile-menu__link {

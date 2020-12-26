@@ -6,6 +6,21 @@ import 'slick-carousel';
 window.addEventListener('DOMContentLoaded', () => {
   webp();
 
+  function openAlert(btnClass) {
+    const btn = document.querySelectorAll(btnClass);
+
+    btn.forEach((button) => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('plug');
+      });
+    });
+  }
+  openAlert('.prefooter__socials-link');
+  openAlert('.prefooter__contacts-phone');
+  openAlert('.prefooter__contacts-email');
+  openAlert('.contact-ways__item');
+
   $('.first-page__slider').slick({
     infinite: true,
     slidesToShow: 1,
