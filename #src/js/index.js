@@ -71,6 +71,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
         item.classList.add(activeClass);
         setTimeout(document.getElementById(item.getAttribute('href')).scrollIntoView({ behavior: 'smooth' }), 1000);
+        document.querySelector('.mobile-menu').classList.remove('mobile-menu-active');
       });
     });
   }
