@@ -8,11 +8,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function openAlert(btnClass) {
     const btn = document.querySelectorAll(btnClass);
+    const modal = document.querySelector('.modal');
+    const modalBg = document.querySelector('.modalBG');
 
     btn.forEach((button) => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
-        alert('plug');
+        modal.classList.add('modal--active');
+        modalBg.classList.add('modalBG--active');
       });
     });
   }
@@ -20,6 +23,24 @@ window.addEventListener('DOMContentLoaded', () => {
   openAlert('.prefooter__contacts-phone');
   openAlert('.prefooter__contacts-email');
   openAlert('.contact-ways__item');
+  openAlert('.the-team__wrapper-item');
+  openAlert('.latest-works__category-readmore');
+
+  function closeModal(btnClass, modalClass, modalBgClass, modalCloseClass, modalBgCloseClass) {
+    const btn = document.querySelector(btnClass);
+    const modal = document.querySelector(modalClass);
+    const modalBg = document.querySelector(modalBgClass);
+
+    btn.addEventListener('click', () => {
+      modal.classList.remove(modalCloseClass);
+      modalBg.classList.remove(modalBgCloseClass);
+    });
+    modalBg.addEventListener('click', () => {
+      modal.classList.remove(modalCloseClass);
+      modalBg.classList.remove(modalBgCloseClass);
+    });
+  }
+  closeModal('.close__modal', '.modal', '.modalBG', 'modal--active', 'modalBG--active');
 
   $('.first-page__slider').slick({
     infinite: true,
@@ -49,11 +70,13 @@ window.addEventListener('DOMContentLoaded', () => {
           link.classList.remove(activeClass);
         });
         item.classList.add(activeClass);
+        setTimeout(document.getElementById(item.getAttribute('href')).scrollIntoView({ behavior: 'smooth' }), 1000);
       });
     });
   }
 
   toggleClases('.header__link', 'header__link-active');
+  toggleClases('.mobile-menu__link', 'mobile-,enu__link--active');
 
   function latestWorks(btnClass, btnActiveClass, categoryClass, categoryActiveClass) {
     const btns = document.querySelectorAll(btnClass);
@@ -148,5 +171,13 @@ window.addEventListener('DOMContentLoaded', () => {
     translateY: 50,
     duration: 1,
     delay: 0.3,
+  });
+
+  window.addEventListener('scroll', () => {
+    if (window.innerWidth < 570 && window.scrollY > document.querySelector('.first-page').offsetHeight - 60) {
+      document.querySelector('.headerLIneFixed').classList.add('headerLIneFixed--active');
+    } else {
+      document.querySelector('.headerLIneFixed').classList.remove('headerLIneFixed--active');
+    }
   });
 });

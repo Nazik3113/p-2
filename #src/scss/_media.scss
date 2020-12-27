@@ -4,7 +4,7 @@
   }
 
   .slick-slider {
-    margin-top: -150px;
+    margin-top: -50px;
   }
 }
 
@@ -41,6 +41,14 @@
 
   .latest-works .latest-works__category .latest-works__category-row.flex-end.with-mb {
     margin-top: 40px;
+  }
+
+  .modal {
+    width: 90vw;
+  }
+
+  .modal .modal__text {
+    margin: 100px auto 0 auto;
   }
 }
 
@@ -197,6 +205,10 @@
   .prefooter {
     padding-top: 70px;
     padding-bottom: 40px;
+  }
+
+  .modal .modal__text {
+    font-size: 25px;
   }
 }
 

@@ -165,6 +165,132 @@ li {
   position: relative;
 }
 
+.headerLIneFixed {
+  width: 100%;
+  height: 60px;
+  background-color: rgba(119, 119, 119, 0.95);
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.headerLIneFixed--active {
+  -webkit-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
+.modal {
+  position: fixed;
+  width: 800px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 100;
+  -webkit-box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+          box-shadow: 3px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  display: none;
+}
+
+.modal--active {
+  display: block;
+}
+
+.modal .modal__circle {
+  width: 100px;
+  height: 100px;
+  background-color: #777;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.modal .modal__title {
+  font-weight: 200;
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  text-transform: uppercase;
+}
+
+.modal .close__modal {
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  width: 40px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.modal .close__modal:hover {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.modal .close__modal-line {
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+
+.modal .close__modal-line:first-child {
+  -webkit-transform: translateY(18px) rotate(-45deg);
+      -ms-transform: translateY(18px) rotate(-45deg);
+          transform: translateY(18px) rotate(-45deg);
+}
+
+.modal .close__modal-line:last-child {
+  -webkit-transform: translateY(-18px) rotate(45deg);
+      -ms-transform: translateY(-18px) rotate(45deg);
+          transform: translateY(-18px) rotate(45deg);
+}
+
+.modal .modal__text {
+  padding: 20px 20px 50px 20px;
+  font-size: 35px;
+  max-width: 600px;
+  margin: 130px auto 0 auto;
+}
+
+.modalBG {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modalBG--active {
+  display: block;
+}
+
 .header .header__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -217,13 +343,14 @@ li {
 .mobile-menu__btn {
   background-color: transparent;
   border: none;
-  position: absolute;
-  right: 40px;
-  top: 40px;
+  position: fixed;
+  right: 30px;
+  top: 20px;
   width: 30px;
   height: 20px;
   outline: none;
   display: none;
+  z-index: 100;
 }
 
 .mobile-menu__btn.mobile-menu__btn-active .mobile-menu__line-top {
@@ -268,12 +395,12 @@ li {
 }
 
 .mobile-menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 300px;
-  height: 100%;
+  height: 100vh;
   background-color: #252525;
-  z-index: 10;
+  z-index: 30;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -438,7 +565,7 @@ li {
 }
 
 .sqwd {
-  margin-top: 150px;
+  padding-top: 150px;
   margin-bottom: 115px;
 }
 
@@ -1197,7 +1324,7 @@ li {
     bottom: -170%;
   }
   .slick-slider {
-    margin-top: -150px;
+    margin-top: -50px;
   }
 }
 
@@ -1228,6 +1355,12 @@ li {
   }
   .latest-works .latest-works__category .latest-works__category-row.flex-end.with-mb {
     margin-top: 40px;
+  }
+  .modal {
+    width: 90vw;
+  }
+  .modal .modal__text {
+    margin: 100px auto 0 auto;
   }
 }
 
@@ -1357,6 +1490,9 @@ li {
   .prefooter {
     padding-top: 70px;
     padding-bottom: 40px;
+  }
+  .modal .modal__text {
+    font-size: 25px;
   }
 }
 
