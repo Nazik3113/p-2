@@ -880,7 +880,7 @@ li {
 }
 
 .latest-works .latest-works__category .latest-works__category-row.flex-end .latest-works__category-title.long-title {
-  width: 400px;
+  width: 90vw;
   right: 170px;
 }
 
@@ -907,7 +907,7 @@ li {
 }
 
 .latest-works .latest-works__category .latest-works__category-row.flex-start .latest-works__category-title.long-title {
-  width: 400px;
+  width: 90vw;
   right: 170px;
 }
 
@@ -1508,7 +1508,7 @@ li {
     top: 100px;
   }
   .latest-works .latest-works__category .latest-works__category-row.flex-start .latest-works__category-title {
-    left: 75px;
+    left: 0px;
     top: 80px;
     width: 230px;
   }
