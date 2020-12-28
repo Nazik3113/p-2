@@ -255,6 +255,10 @@
     width: 300px;
     margin-top: 10px;
   }
+
+  .latest-works .latest-works__category .latest-works__category-row.flex-start .latest-works__category-title.long-title {
+    width: 90vw;
+  }
 }
 
 @media (max-width: 390px) {
